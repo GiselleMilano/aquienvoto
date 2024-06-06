@@ -79,7 +79,7 @@ function App() {
       </AnimatePresence>
       {!winner && (
         <div className="absolute w-full bottom-0">
-          <Progress value={(step / maxSteps) * 100} />
+          <Progress value={((step - 1) / (maxSteps - 1)) * 100} />
         </div>
       )}
       {winner && (
