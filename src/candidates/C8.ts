@@ -24,7 +24,7 @@ export const C8: Candidate = {
     {
       title: "Vivienda",
       description:
-        "El programa común del partido sostiene: “Será prioridad desalentar la segregación espacial y promover la infraestructura y servicios”. De todas formas, el candidato se mostró a favor de la creación de barrios privados, algo que apoyó en su gestión como intendente. Según informó Montevideo Portal, el precandidato destacó que “ofrecen mucho trabajo” y que es posible que estos espacios se “articulen con el entorno”. ",
+        "El programa común del partido sostiene: “Será prioridad desalentar la segregación espacial y promover la infraestructura y servicios”. De todas formas, el candidato se mostró a favor de la creación de barrios privados. Según informó Montevideo Portal, el precandidato destacó que “ofrecen mucho trabajo” y que es posible que estos espacios se “articulen con el entorno”. ",
     },
     {
       title: "Plebiscitos",
