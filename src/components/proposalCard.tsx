@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import { Crown } from "./cronw";
 import { Tick } from "./tick";
@@ -23,22 +24,41 @@ interface props {
   proposal: Proposal;
   showCrown?: boolean;
   onClick?: () => void;
+  position?: "left" | "right";
 }
 
-export const ProposalCard: FC<props> = ({ proposal, showCrown, onClick }) => {
+export const ProposalCard: FC<props> = ({
+  proposal,
+  showCrown,
+  onClick,
+  position,
+}) => {
   return (
-    <div className="relative">
+    <motion.div
+      className="relative"
+      initial={{ opacity: 0, scale: 0.85, x: position === "left" ? -500 : 500 }}
+      animate={{ opacity: 1, scale: 1, x: 0 }}
+      exit={{ scale: 0.85 }}
+      transition={{ duration: 0.4 }}
+    >
       <button
         className=" hover:scale-110 hover:bg-green-200 transition-all absolute bottom-3 bg-green-100 rounded-full border left-1/2 -translate-x-1/2"
         onClick={onClick}
       >
         <Tick />
       </button>
-      {showCrown && (
-        <div className="absolute -top-16 right-9 rotate-12">
-          <Crown />
-        </div>
-      )}
+      <AnimatePresence>
+        {showCrown && (
+          <motion.div
+            className="absolute -top-16 right-9"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 12 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+          >
+            <Crown />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="border w-[500px] h-[500px] overflow-auto rounded-md p-5 bg-gray-100 shadow pb-12">
         {proposal.map(({ title, description }) => (
           <div key={title} className="mb-3">
@@ -47,6 +67,6 @@ export const ProposalCard: FC<props> = ({ proposal, showCrown, onClick }) => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };

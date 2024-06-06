@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { C1 } from "./candidates/C1";
 import { C10 } from "./candidates/C10";
@@ -58,18 +59,24 @@ function App() {
 
   return (
     <div>
-      <header className="bg-white w-full h-screen flex items-center justify-center gap-10">
-        <ProposalCard
-          proposal={candidates[currentLeft].proposal}
-          showCrown={champion === "left"}
-          onClick={() => chooseProposal("left")}
-        />
-        <ProposalCard
-          proposal={candidates[currentRight].proposal}
-          showCrown={champion === "right"}
-          onClick={() => chooseProposal("right")}
-        />
-      </header>
+      <AnimatePresence initial={false}>
+        <header className="bg-white w-full h-screen flex items-center justify-center gap-10 overflow-clip">
+          <ProposalCard
+            key={candidates[currentLeft].name}
+            proposal={candidates[currentLeft].proposal}
+            showCrown={champion === "left"}
+            onClick={() => chooseProposal("left")}
+            position="left"
+          />
+          <ProposalCard
+            key={candidates[currentRight].name}
+            proposal={candidates[currentRight].proposal}
+            showCrown={champion === "right"}
+            onClick={() => chooseProposal("right")}
+            position="right"
+          />
+        </header>
+      </AnimatePresence>
       {!winner && (
         <div className="absolute w-full bottom-0">
           <Progress value={(step / maxSteps) * 100} />
@@ -113,7 +120,7 @@ function App() {
 
 export default App;
 
-// TODO: Add steps remaining
 // TODO: Add a button to restart the process
 // TODO: Add a button to go back to the previous step
 // TODO: Add a button to skip both proposals (only if there is no champion)
+//TODO: Icon
