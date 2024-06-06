@@ -106,11 +106,17 @@ function App() {
             <div className="w-full text-center">
               <button
                 onClick={closeStartModal}
-                className="bg-green-500 hover:bg-green-700 transition-colors text-white font-bold px-3 rounded-md mt-10 mx-auto"
+                className="bg-green-500 hover:bg-green-700 transition-colors text-white font-bold px-3 rounded-md mt-8 mx-auto"
               >
                 Empezar
               </button>
             </div>
+            <span className="text-sm">
+              Fuente:{" "}
+              <a href="https://enperspectiva.uy/especial-elecciones-internas/">
+                En perspectiva
+              </a>
+            </span>
           </div>
         </div>
       )}
