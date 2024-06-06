@@ -144,7 +144,7 @@ function App() {
                   alt={winner.name}
                   className="rounded-full w-40 h-40 object-cover"
                 />
-                <div className="absolute left-16 -top-8 -rotate-12">
+                <div className="absolute md:left-16 md:-top-8 left-8 -top-10 -rotate-12">
                   <Crown />
                 </div>
               </a>
