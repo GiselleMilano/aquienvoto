@@ -138,19 +138,23 @@ function App() {
               {winner.partido}
             </a>
             <div className="relative flex justify-center gap-3 mt-12">
-              <img
-                src={winner.candidateImageUrl}
-                alt={winner.name}
-                className="rounded-full w-40 h-40 object-cover"
-              />
-              <div className="absolute left-16 -top-8 -rotate-12">
-                <Crown />
-              </div>
-              <img
-                src={winner.partidoImageUrl}
-                alt={winner.name}
-                className="rounded-full w-40 h-40 object-cover"
-              />
+              <a href={winner.urlCandidate}>
+                <img
+                  src={winner.candidateImageUrl}
+                  alt={winner.name}
+                  className="rounded-full w-40 h-40 object-cover"
+                />
+                <div className="absolute left-16 -top-8 -rotate-12">
+                  <Crown />
+                </div>
+              </a>
+              <a href={winner.urlPartido}>
+                <img
+                  src={winner.partidoImageUrl}
+                  alt={winner.name}
+                  className="rounded-full w-40 h-40 object-cover"
+                />
+              </a>
             </div>
           </div>
         </div>
