@@ -45,6 +45,9 @@ function App() {
   const [step, setStep] = useState(1);
   const [champion, setChampion] = useState<null | "left" | "right">(null);
   const [winner, setWinner] = useState<null | Candidate>(null);
+  const [startModal, setStartModal] = useState<boolean>(true);
+
+  const closeStartModal = () => setStartModal(false);
 
   const chooseProposal = (chosen: "left" | "right") => {
     console.log({ currentLeft, currentRight, step, champion, winner });
@@ -80,6 +83,35 @@ function App() {
       {!winner && (
         <div className="absolute w-full bottom-0">
           <Progress value={((step - 1) / (maxSteps - 1)) * 100} />
+        </div>
+      )}
+      {startModal && (
+        <div
+          className="absolute inset-0 bg-blue-100/50 flex justify-center items-center"
+          onClick={closeStartModal}
+        >
+          <div className="relative w-[500px] h-[410px] rounded bg-white shadow-md text-left p-5">
+            <h1 className="font-bold text-3xl mt-5 mb-2 text-center">
+              A quien voto?
+            </h1>
+            La forma de decidir cual es tu candidato ideal con el menor sesgo
+            politico posible.
+            <div className="font-bold text-lg mt-5">Instrucciones:</div>
+            Acontinuacion se te presentaran propuestas de dos candidatos, con
+            toda la informacion anonimizada y sin genero. Elegi la propuesta que
+            mas te guste y aparecera una nueva que reemplazara la otra.
+            <br />
+            Cuando acabes todos los pasos (16 en total), te mostraremos cual es
+            el candidato asociado a la propuesta que mas te gusto.
+            <div className="w-full text-center">
+              <button
+                onClick={closeStartModal}
+                className="bg-green-500 hover:bg-green-700 transition-colors text-white font-bold px-3 rounded-md mt-10 mx-auto"
+              >
+                Empezar
+              </button>
+            </div>
+          </div>
         </div>
       )}
       {winner && (
