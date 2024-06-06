@@ -50,7 +50,7 @@ export const ProposalCard: FC<props> = ({
       <AnimatePresence>
         {showCrown && (
           <motion.div
-            className="absolute -top-16 right-9"
+            className="absolute md:-top-16 md:right-9 top-0 right-0"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1, rotate: 12 }}
             exit={{ opacity: 0, scale: 0.5 }}
@@ -59,7 +59,7 @@ export const ProposalCard: FC<props> = ({
           </motion.div>
         )}
       </AnimatePresence>
-      <div className="border w-[500px] h-[500px] overflow-auto rounded-md p-5 bg-gray-100 shadow pb-12">
+      <div className="md:border md:w-[500px] md:h-[500px] w-full h-[calc(50dvh-8px)] overflow-auto md:rounded-md p-5 bg-gray-100 shadow pb-12">
         {proposal.map(({ title, description }) => (
           <div key={title} className="mb-3">
             <h1 className="font-bold">{title}</h1>

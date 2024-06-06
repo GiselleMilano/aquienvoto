@@ -63,7 +63,7 @@ function App() {
   return (
     <div>
       <AnimatePresence initial={false}>
-        <header className="bg-white w-full h-screen flex items-center justify-center gap-10 overflow-clip">
+        <header className="bg-white w-full h-screen divide-y-4 md:divide-y-0 md:flex items-center justify-center md:gap-10 overflow-clip flex-wrap">
           <ProposalCard
             key={candidates[currentLeft].name}
             proposal={candidates[currentLeft].proposal}
@@ -90,7 +90,7 @@ function App() {
           className="absolute inset-0 bg-blue-100/50 flex justify-center items-center"
           onClick={closeStartModal}
         >
-          <div className="relative w-[500px] h-[410px] rounded bg-white shadow-md text-left p-5">
+          <div className="relative md:w-[500px] md:h-[410px] w-full h-full rounded bg-white shadow-md text-left p-5">
             <h1 className="font-bold text-3xl mt-5 mb-2 text-center">
               A quien voto?
             </h1>
@@ -122,7 +122,7 @@ function App() {
       )}
       {winner && (
         <div className="absolute inset-0 bg-gray-200 flex justify-center items-center">
-          <div className="w-[500px] h-[500px] rounded bg-white shadow-md text-center">
+          <div className="md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
             <div className="mt-12">Tu candidato elegido es</div>
             <a
               href={winner.urlCandidate}
