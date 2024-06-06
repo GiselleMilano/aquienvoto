@@ -15,6 +15,7 @@ import { C6 } from "./candidates/C6";
 import { C7 } from "./candidates/C7";
 import { C8 } from "./candidates/C8";
 import { C9 } from "./candidates/C9";
+import { Progress } from "./components/progress";
 import { Candidate, ProposalCard } from "./components/proposalCard";
 
 const candidates = [
@@ -69,6 +70,11 @@ function App() {
           onClick={() => chooseProposal("right")}
         />
       </header>
+      {!winner && (
+        <div className="absolute w-full bottom-0">
+          <Progress value={(step / maxSteps) * 100} />
+        </div>
+      )}
       {winner && (
         <div className="absolute inset-0 bg-gray-200 flex justify-center items-center">
           <div className="w-[500px] h-[500px] rounded bg-white shadow-md text-center">
