@@ -16,6 +16,7 @@ import { C6 } from "./candidates/C6";
 import { C7 } from "./candidates/C7";
 import { C8 } from "./candidates/C8";
 import { C9 } from "./candidates/C9";
+import { Crown } from "./components/cronw";
 import { Progress } from "./components/progress";
 import { Candidate, ProposalCard } from "./components/proposalCard";
 
@@ -121,7 +122,7 @@ function App() {
       )}
       {winner && (
         <div className="absolute inset-0 bg-gray-200 flex justify-center items-center">
-          <div className="md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
+          <div className=" md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
             <div className="mt-12">Tu candidato elegido es</div>
             <a
               href={winner.urlCandidate}
@@ -136,12 +137,15 @@ function App() {
             >
               {winner.partido}
             </a>
-            <div className="flex justify-center gap-3 mt-12">
+            <div className="relative flex justify-center gap-3 mt-12">
               <img
                 src={winner.candidateImageUrl}
                 alt={winner.name}
                 className="rounded-full w-40 h-40 object-cover"
               />
+              <div className="absolute left-16 -top-8 -rotate-12">
+                <Crown />
+              </div>
               <img
                 src={winner.partidoImageUrl}
                 alt={winner.name}
