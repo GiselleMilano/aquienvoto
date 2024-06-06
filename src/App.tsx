@@ -123,4 +123,3 @@ export default App;
 // TODO: Add a button to restart the process
 // TODO: Add a button to go back to the previous step
 // TODO: Add a button to skip both proposals (only if there is no champion)
-//TODO: Icon
