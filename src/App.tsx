@@ -50,7 +50,6 @@ function App() {
   const closeStartModal = () => setStartModal(false);
 
   const chooseProposal = (chosen: "left" | "right") => {
-    console.log({ currentLeft, currentRight, step, champion, winner });
     setChampion(chosen);
     if (step === maxSteps) {
       setWinner(candidates[chosen === "left" ? currentLeft : currentRight]);
@@ -61,9 +60,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="bg-white w-full md:h-screen h-dvh">
       <AnimatePresence initial={false}>
-        <header className="bg-white w-full h-screen divide-y-4 md:divide-y-0 md:flex items-center justify-center md:gap-10 overflow-clip flex-wrap">
+        <header className="md:flex items-center justify-center md:gap-10 overflow-clip flex-wrap">
           <ProposalCard
             key={candidates[currentLeft].name}
             proposal={candidates[currentLeft].proposal}
