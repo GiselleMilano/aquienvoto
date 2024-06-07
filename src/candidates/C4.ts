@@ -38,7 +38,7 @@ export const C4: Candidate = {
     {
       title: "Desarrollo económico",
       description:
-        "El candidato plantea “darle mayor independencia al Banco Central del Uruguay” al cambiar la conformación de su directorio; “durarán cinco años y se renovarán en forma escalonada a razón de uno cada veinte meses”. Además, propone generar “un sistema consolidado de liquidación de tarjetas para agilizar los trámites y los costos administrativos” de las Mipymes y la “extensión de los subsidios” para estas organizaciones. \n Por otra parte, a pesar de que no recibió el apoyo necesario de los legisladores para realizar el plebiscito de ingreso a las intendencias por sorteo o concurso, Silva sostuvo en conferencia de prensa que es un tema “innegociable” para una próxima coalición de gobierno. ",
+        "El candidato plantea “darle mayor independencia al Banco Central del Uruguay” al cambiar la conformación de su directorio; “durarán cinco años y se renovarán en forma escalonada a razón de uno cada veinte meses”. Además, propone generar “un sistema consolidado de liquidación de tarjetas para agilizar los trámites y los costos administrativos” de las Mipymes y la “extensión de los subsidios” para estas organizaciones. \n Por otra parte, a pesar de que no recibió el apoyo necesario de los legisladores para realizar el plebiscito de ingreso a las intendencias por sorteo o concurso, el candidato sostuvo en conferencia de prensa que es un tema “innegociable” para una próxima coalición de gobierno. ",
     },
     {
       title: "Plebiscitos",
