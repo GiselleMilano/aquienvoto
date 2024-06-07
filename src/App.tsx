@@ -63,7 +63,7 @@ function App() {
   return (
     <div className="bg-white w-full md:h-screen h-dvh">
       <AnimatePresence initial={false}>
-        <header className="md:flex items-center justify-center md:gap-10 overflow-clip flex-wrap">
+        <header className="md:flex h-full w-full items-center justify-center md:gap-10 overflow-clip flex-wrap">
           <ProposalCard
             key={candidates[currentLeft].name}
             proposal={candidates[currentLeft].proposal}
