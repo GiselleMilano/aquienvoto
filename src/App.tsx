@@ -133,9 +133,9 @@ function App() {
         </div>
       )}
       {winner && (
-        <div className="flex flex-row w-full h-full justify-center items-center bg-gray-200 gap-3 absolute inset-0">
+        <div className="sm:flex w-full h-full sm:justify-center sm:items-center sm:bg-gray-200 bg-white gap-3 absolute inset-0">
           <div className="bg-gray-200 flex justify-start items-center">
-            <div className=" md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
+            <div className=" md:w-[500px] md:h-[500px] h-full w-full rounded bg-white sm:shadow-md text-center pb-8 sm:pb-0">
               <div className="mt-12">Tu candidato elegido es</div>
               <a
                 href={winner.urlCandidate}
@@ -171,7 +171,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center md:w-[500px] md:h-[500px] w-full h-[calc(50dvh-15px)] bg-white rounded p-5 shadow-md gap-3">
+          <div className="flex flex-col justify-center items-center md:w-[500px] md:h-[500px] w-full h-[calc(50dvh-15px)] bg-white rounded p-5 sm:shadow-md gap-3">
             <div className="w-full text-center">Propuesta elegida</div>
             <div className="border overflow-auto md:rounded-md rounded-lg p-5 bg-gray-100 shadow pb-12">
               {winner.proposal.map(({ title, description }) => (
