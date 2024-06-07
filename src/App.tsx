@@ -133,40 +133,53 @@ function App() {
         </div>
       )}
       {winner && (
-        <div className="absolute inset-0 bg-gray-200 flex justify-center items-center">
-          <div className=" md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
-            <div className="mt-12">Tu candidato elegido es</div>
-            <a
-              href={winner.urlCandidate}
-              className="font-bold text-3xl underline text-blue-500"
-            >
-              {winner.name}
-            </a>
-            <div className="mt-6">del partido</div>
-            <a
-              href={winner.urlPartido}
-              className="font-bold text-3xl underline text-blue-500"
-            >
-              {winner.partido}
-            </a>
-            <div className="relative flex justify-center gap-3 mt-12">
-              <a href={winner.urlCandidate}>
-                <img
-                  src={winner.candidateImageUrl}
-                  alt={winner.name}
-                  className="rounded-full w-40 h-40 object-cover"
-                />
-                <div className="absolute md:left-16 md:-top-8 left-8 -top-10 -rotate-12">
-                  <Crown />
+        <div className="flex flex-row w-full h-full justify-center items-center bg-gray-200 gap-3 absolute inset-0">
+          <div className="bg-gray-200 flex justify-start items-center">
+            <div className=" md:w-[500px] md:h-[500px] h-full w-full rounded bg-white shadow-md text-center">
+              <div className="mt-12">Tu candidato elegido es</div>
+              <a
+                href={winner.urlCandidate}
+                className="font-bold text-3xl underline text-blue-500"
+              >
+                {winner.name}
+              </a>
+              <div className="mt-6">del partido</div>
+              <a
+                href={winner.urlPartido}
+                className="font-bold text-3xl underline text-blue-500"
+              >
+                {winner.partido}
+              </a>
+              <div className="relative flex justify-center gap-3 mt-12">
+                <a href={winner.urlCandidate}>
+                  <img
+                    src={winner.candidateImageUrl}
+                    alt={winner.name}
+                    className="rounded-full w-40 h-40 object-cover"
+                  />
+                  <div className="absolute md:left-16 md:-top-8 left-8 -top-10 -rotate-12">
+                    <Crown />
+                  </div>
+                </a>
+                <a href={winner.urlPartido}>
+                  <img
+                    src={winner.partidoImageUrl}
+                    alt={winner.name}
+                    className="rounded-full w-40 h-40 object-cover"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center items-center md:w-[500px] md:h-[500px] w-full h-[calc(50dvh-15px)] bg-white rounded p-5 shadow-md gap-3">
+            <div className="w-full text-center">Propuesta elegida</div>
+            <div className="border overflow-auto md:rounded-md rounded-lg p-5 bg-gray-100 shadow pb-12">
+              {winner.proposal.map(({ title, description }) => (
+                <div key={title} className="mb-3">
+                  <h1 className="font-bold">{title}</h1>
+                  <span>{description}</span>
                 </div>
-              </a>
-              <a href={winner.urlPartido}>
-                <img
-                  src={winner.partidoImageUrl}
-                  alt={winner.name}
-                  className="rounded-full w-40 h-40 object-cover"
-                />
-              </a>
+              ))}
             </div>
           </div>
         </div>
