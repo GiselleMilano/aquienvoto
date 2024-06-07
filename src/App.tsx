@@ -20,6 +20,12 @@ import { Crown } from "./components/cronw";
 import { Progress } from "./components/progress";
 import { Candidate, ProposalCard } from "./components/proposalCard";
 
+declare global {
+  interface Window {
+    dataLayer: any;
+  }
+}
+
 const candidates = [
   C1,
   C2,
@@ -53,7 +59,13 @@ function App() {
   const chooseProposal = (chosen: "left" | "right") => {
     setChampion(chosen);
     if (step === maxSteps) {
-      setWinner(candidates[chosen === "left" ? currentLeft : currentRight]);
+      const winner = candidates[chosen === "left" ? currentLeft : currentRight];
+      setWinner(winner);
+
+      window.dataLayer.push({
+        event: "candidate_chosen",
+        candidate: winner.name,
+      });
       return;
     }
     setStep(step + 1);
